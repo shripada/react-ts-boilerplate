@@ -9,6 +9,17 @@ const requireField = (fieldName) => {
 };
 
 module.exports = (plop) => {
+  plop.setActionType('runFormat', function (answers) {
+    const exec = require('child_process').exec;
+    const command = 'npm run format';
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Failed to run format: ${error}`);
+        return;
+      }
+    });
+  });
+
   plop.setGenerator('component', {
     description: 'Create a reusable component',
     prompts: [
@@ -44,6 +55,14 @@ module.exports = (plop) => {
         type: 'add',
         path: 'src/components/{{pascalCase name}}/index.ts',
         templateFile: 'plop-templates/Component/index.ts.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+        templateFile: 'plop-templates/Component/Component.test.tsx.hbs',
+      },
+      {
+        type: 'runFormat',
       },
     ],
   });
