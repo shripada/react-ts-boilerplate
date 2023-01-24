@@ -5,6 +5,9 @@ import styles from './Counter.module.css';
 
 const Counter = ({ initialCount = 0 }: IProps) => {
   const [count, setCount] = React.useState<number>(initialCount);
+
+  // classnames is an elegant library to compose classes
+  // can refer further here: https://gist.github.com/heygrady/316bd69633ce816aee1ca24ab63535db
   const classes = cn(styles.counter, { [styles.negative]: count < 0 });
 
   return (
