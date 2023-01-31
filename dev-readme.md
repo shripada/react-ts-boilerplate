@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     <li>Husky for the pre commit hook requirements</li>
     <li>lint-staged to run lint/formatting etc only on staged files during a commit via a pre commit hook</li>
     <li><a href="https://github.com/plopjs/plop">Plop js for enabling hassle free component files for a new component</a></li>
+    <li>commit lint to ensure commits are correctly written using convention commit lint format. Please see `semantic commit messages` section for more information</li>
 </ol>
 
 ## Available Scripts
@@ -45,3 +46,42 @@ When you run this it will ask the name of your component. It will then create th
 ### `npm run storybook`
 
 Run this to build and open the storybook page in your default browser.
+
+# CSS in JS using styled-components
+
+The project uses the most recommended css in js library [styled-components](https://styled-components.com/)
+
+# Semantic Commit Messages
+
+See how a minor change to your commit message style can make you a better programmer.
+
+Format: `<type>(<scope>): <subject>`
+
+`<scope>` is optional
+
+## Example
+
+```
+feat: add hat wobble
+^--^  ^------------^
+|     |
+|     +-> Summary in present tense.
+|
++-------> Type: chore, docs, feat, fix, refactor, style, or test.
+```
+
+More Examples:
+
+- `feat`: (new feature for the user, not a new feature for build script)
+- `fix`: (bug fix for the user, not a fix to a build script)
+- `docs`: (changes to the documentation)
+- `style`: (formatting, missing semi colons, etc; no production code change)
+- `refactor`: (refactoring production code, eg. renaming a variable)
+- `test`: (adding missing tests, refactoring tests; no production code change)
+- `chore`: (updating grunt tasks etc; no production code change)
+
+References:
+
+- https://www.conventionalcommits.org/
+- https://seesparkbox.com/foundry/semantic_commit_messages
+- http://karma-runner.github.io/1.0/dev/git-commit-msg.html

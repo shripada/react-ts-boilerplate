@@ -1,14 +1,26 @@
 import React from 'react';
 import { IProps } from './types'
-import styles from './{{pascalCase name}}.module.css';
+import { COLORS, WEIGHTS,QUERIES } from '../../constants';
+import styled from 'styled-components/macro';
 
 
 const {{pascalCase name}} = (props : IProps) => {
   return (
-    <div className={ styles.{{camelCase name}} }>TODO</div>
+    <Wrapper>TODO</Wrapper>
   );
 };
 
+/* Change this as per your component requirement */
+const Wrapper = styled.div`
+  color: ${COLORS.primary};
+  font-weight: ${WEIGHTS.medium};
+  padding:10px;
+  @media ${QUERIES.lapTopAndBelow}{
+    color: ${COLORS.white};
+    padding:8px;
+  }
+  
+`;
 
 
 export default {{pascalCase name}};
