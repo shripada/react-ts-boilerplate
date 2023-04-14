@@ -9,6 +9,7 @@ export const COLORS = {
   },
   primary: 'hsl(340deg 65% 47%)',
   secondary: 'hsl(240deg 60% 63%)',
+  red: 'hsl(0, 100%, 50%)',
 } as const;
 
 export const WEIGHTS = {
